@@ -1,0 +1,76 @@
+{
+  "lang":"en",
+  "name":"pipeline",
+  "version":"0.0.0",
+  "spacy_version":">=3.7.4,<3.8.0",
+  "description":"",
+  "author":"",
+  "email":"",
+  "url":"",
+  "license":"",
+  "spacy_git_version":"bff8725f4",
+  "vectors":{
+    "width":0,
+    "vectors":0,
+    "keys":0,
+    "name":null,
+    "mode":"default"
+  },
+  "labels":{
+    "tok2vec":[
+
+    ],
+    "ner":[
+      "Contact_Number",
+      "Email Id",
+      "Money",
+      "Organization",
+      "Person"
+    ]
+  },
+  "pipeline":[
+    "tok2vec",
+    "ner"
+  ],
+  "components":[
+    "tok2vec",
+    "ner"
+  ],
+  "disabled":[
+
+  ],
+  "performance":{
+    "ents_f":1.0,
+    "ents_p":1.0,
+    "ents_r":1.0,
+    "ents_per_type":{
+      "Person":{
+        "p":1.0,
+        "r":1.0,
+        "f":1.0
+      },
+      "Money":{
+        "p":1.0,
+        "r":1.0,
+        "f":1.0
+      },
+      "Organization":{
+        "p":1.0,
+        "r":1.0,
+        "f":1.0
+      },
+      "Email Id":{
+        "p":1.0,
+        "r":1.0,
+        "f":1.0
+      },
+      "Contact_Number":{
+        "p":1.0,
+        "r":1.0,
+        "f":1.0
+      }
+    },
+    "tok2vec_loss":147.091208502,
+    "ner_loss":6.6422849134
+  }
+}
