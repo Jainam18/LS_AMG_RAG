@@ -3,16 +3,6 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-uri = "mongodb+srv://team-all:HHcJOjFa0lD5zHma@lms-amg-rag.kqmslmy.mongodb.net/?retryWrites=true&w=majority"
-client = MongoClient(uri, server_api=ServerApi("1"))
-
-# Send a ping to confirm a successful connection
-try:
-    client.admin.command("ping")
-    print("Pinged your deployment. You successfully connected to MongoDB!")
-except Exception as e:
-    print(e)
-
 
 # Function to read markdown files and convert them into strings
 def read_markdown_files(directory):
@@ -70,8 +60,10 @@ def store_data_in_mongodb(texts, vectors, client):
                 "org2",
             ],  # Sample organizations, replace with actual data
             "Places": ["place1", "place2"],  # Sample places, replace with actual data
-            "Email_ID": "example@example.com",  # Sample email, replace with actual data
-            "Number": 1234567890,  # Sample number, replace with actual data
+            "Money": [100, 200],  # Sample money, replace with actual data
+            "Email_IDs": ["example1@example.com", "example2@example.com"],  # Sample email, replace with actual data
+            "Contact_Numbers": [1234567890, 9876543210],  # Sample number, replace with actual data
+            "Dates": ["date1", "date2"],  # Sample dates, replace with actual data
             "Doc_ID": i + 1,  # Foreign key reference to document
             "ID": i + 1,  # Assuming unique ID for each metadata entry
         }
@@ -84,7 +76,7 @@ def store_data_in_mongodb(texts, vectors, client):
 
 # Function to insert data into MongoDB Docs Collection from arguments
 def insert_data_into_mongodb_collection(
-    client, doc_title, category, vector, text, flag, keywords, people, org, places, email, number
+    client, doc_title, category, vector, text, flag, keywords, people, org, places, money, email, contact_number, dates_mentioned
 ):
     db = client["RAG"]
     docs_collection = db["Docs"]
@@ -106,21 +98,35 @@ def insert_data_into_mongodb_collection(
             "People": people,
             "Organisation": org,
             "Places": places,
+            "Money": money,
             "Email_ID": email,
-            "Number": number,
+            "Contact_Number": contact_number,
+            "Dates_Mentioned": dates_mentioned,
             "Doc_ID": doc_id
         }
 
     return metadata_collection.insert_one(meta)
 
-# Directory containing markdown files
-# markdown_directory = "./data/business_docs"
 
-# Read markdown files
-# markdown_texts = read_markdown_files(markdown_directory)
+if __name__ == "__main__":
+    uri = "mongodb+srv://team-all:HHcJOjFa0lD5zHma@lms-amg-rag.kqmslmy.mongodb.net/?retryWrites=true&w=majority"
+    client = MongoClient(uri, server_api=ServerApi("1"))
 
-# Generate TF-IDF vectors
-# tfidf_matrix, feature_names = generate_tfidf_vectors(markdown_texts)
+    # Send a ping to confirm a successful connection
+    try:
+        client.admin.command("ping")
+        print("Pinged your deployment. You successfully connected to MongoDB!")
+    except Exception as e:
+        print(e)
+    
+    # Directory containing markdown files
+    markdown_directory = "./LS_AMG_RAG/data/business_docs"
 
-# Store data in MongoDB
-# store_data_in_mongodb(markdown_texts, tfidf_matrix.toarray(), client)
+    # Read markdown files
+    markdown_texts = read_markdown_files(markdown_directory)
+
+    # Generate TF-IDF vectors
+    tfidf_matrix, feature_names = generate_tfidf_vectors(markdown_texts)
+
+    # Store data in MongoDB
+    store_data_in_mongodb(markdown_texts, tfidf_matrix.toarray(), client)
