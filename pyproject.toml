@@ -16,6 +16,10 @@ openai = "^1.13.3"
 tiktoken = "^0.6.0"
 pandas = "^2.2.1"
 chromadb = "^0.4.24"
+pke = {git = "https://github.com/boudinfl/pke.git"}
+markdown = "^3.5.2"
+
+
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.3"

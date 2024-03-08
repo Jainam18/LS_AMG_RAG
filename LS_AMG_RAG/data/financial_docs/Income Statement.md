@@ -2,7 +2,7 @@
 
 **Company Name:** XYZ Corporation
 
-**For the Year Ended:** December 31, 20XX
+**For the Year Ended:** December 31, 2023
 
 | Category            | Amount      |
 |---------------------|-------------|

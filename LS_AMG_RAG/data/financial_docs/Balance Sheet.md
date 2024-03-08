@@ -2,7 +2,7 @@
 
 **Company Name:** XYZ Corporation
 
-**As of Date:** December 31, 20XX
+**As of Date:** December 31, 2023
 
 | Category           | Amount      |
 |--------------------|-------------|

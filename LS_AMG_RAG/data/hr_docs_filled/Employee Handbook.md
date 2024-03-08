@@ -34,4 +34,4 @@ Performance evaluations are conducted regularly to provide feedback on employee 
 Instagram offers a variety of benefits to eligible employees, including health insurance, retirement plans, paid time off, and more. Please refer to the HR department for detailed information on the benefits available to you.
 
 ## 8. Contact Information
-If you have any questions or concerns regarding the information in this Employee Handbook, please contact the HR department at [HR email address] or [HR phone number].
+If you have any questions or concerns regarding the information in this Employee Handbook, please contact the HR department at careers.instagram@gmail.com or +91 148756226.
