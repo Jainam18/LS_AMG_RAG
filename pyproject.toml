@@ -16,6 +16,9 @@ openai = "^1.13.3"
 tiktoken = "^0.6.0"
 pandas = "^2.2.1"
 chromadb = "^0.4.24"
+pymongo = "^4.6.2"
+scikit-learn = "^1.4.1.post1"
+ipywidgets = "^8.1.2"
 pke = {git = "https://github.com/boudinfl/pke.git"}
 markdown = "^3.5.2"
 
