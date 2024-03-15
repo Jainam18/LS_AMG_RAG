@@ -87,7 +87,8 @@ class Gemini:
         '''
         count = 0
         for message in self.chat.history:
-            count += self.model.count_tokens(message.parts[0].text).total_tokens
+            count += self.model.count_tokens(
+                message.parts[0].text).total_tokens
         return count
 
     def display_chat(self, format='markdown'):
@@ -110,3 +111,20 @@ class Gemini:
             display(Markdown(chat_text))
         else:
             print(chat_text)
+
+    def gen_embeddings(self, text, title=None):
+        '''
+        Generate embeddings for the given text.
+
+        Args:
+        text (str): The text to generate embeddings for.
+        title (str): The title of the text (optional).
+
+        Returns:
+        embeddings (list): A list of embeddings for the text.
+        '''
+        embeddings = palm.embed_content(model=self.model,
+                                        content=text,
+                                        task_type="retrieval_document",
+                                        title=title)
+        return embeddings['embedding']
