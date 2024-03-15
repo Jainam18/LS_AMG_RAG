@@ -123,7 +123,7 @@ class Gemini:
         Returns:
         embeddings (list): A list of embeddings for the text.
         '''
-        embeddings = palm.embed_content(model=self.model,
+        embeddings = palm.embed_content(model = 'models/embedding-001',
                                         content=text,
                                         task_type="retrieval_document",
                                         title=title)
