@@ -30,6 +30,10 @@ def read_markdown_files(root,filename):
         raw_text = remove_markdown_formatting(f.read())
     return raw_text
 
+def gemini_vector(text,title):
+    gemini = prompt_utils.Gemini()
+    response = gemini.gen_embeddings(text,title)
+    return response
 
 # Function to generate TF-IDF vectors for the texts
 def generate_tfidf_vectors(texts):
@@ -106,7 +110,8 @@ def store_data_in_mongodb(texts, vectors, client):
         document = {
             "Doc_Title": f"Document {i+1}",
             "Category": "Some Category",
-            "Vector": vectors[i].tolist(),
+            # "Vector": vectors[i].tolist(),
+            "Gemini_vector": vectors,
             "Text": text,
             "Flag": "AI or Actual",
             "ID": i + 1,  # Assuming unique ID for each document
@@ -149,7 +154,8 @@ def insert_data_into_mongodb_collection(
     document = {
         "Doc_Title": doc_title,
         "Category": category,
-        "Vector": vector.tolist(),
+        # "Vector": vector.tolist(),
+        "Gemini_vector": vector,
         "Text": text,
         "Flag": flag, 
     }
@@ -192,7 +198,7 @@ if __name__ == "__main__":
             text = read_markdown_files(root,file)
             filename = file
             category = root.split('\\')[-1]
-            tfidf_matrix, feature_names = generate_tfidf_vectors([text])
+            embeddings = gemini_vector(text, filename)
             keywords = keyword_yake(text) 
             metadata = extract_metadata(text) # need to figure out about duplicates
             people = metadata["Person"]
@@ -203,7 +209,7 @@ if __name__ == "__main__":
             contact_number = metadata["Contact_Number"]
             dates_mentioned = date_extraction(text)
             flag="AI"
-            insert_data_into_mongodb_collection(client, filename, category, tfidf_matrix.toarray(), text, flag, keywords, people, org, places, money, email, contact_number, dates_mentioned)
+            insert_data_into_mongodb_collection(client, filename, category, embeddings, text, flag, keywords, people, org, places, money, email, contact_number, dates_mentioned)
             print("Completed")
             # break
         # break
