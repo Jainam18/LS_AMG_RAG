@@ -1,0 +1,38 @@
+Multihop (Complex) Questions:
+Given Instagram's progress report data, what are the key factors influencing its marketing strategy?
+How do Instagram's shareholder agreements align with the company's long-term goals and vision?
+Considering Instagram's board of directors and diversity initiatives, how are decisions made to promote inclusion within the company?
+By analyzing Instagram's income statement and balance sheet, what insights can be drawn regarding its financial performance and future projections?
+Exploring Instagram's employee ESOPs and payslip details, how does the company incentivize employee retention and satisfaction?
+By analyzing Instagram's progress report and employee contracts, what insights can be drawn regarding the company's growth trajectory and workforce management strategies?
+Considering Instagram's marketing plan, shareholder agreements, and balance sheet data, how does the company plan to expand its market share while maintaining financial stability?
+How do Instagram's employee ESOPs, diversity initiatives, and progress report metrics contribute to its reputation as an employer of choice?
+Given Instagram's tax return history, shareholder agreements, and board of directors' decisions, what strategies does the company employ to manage financial risks and compliance?
+How do Instagram's marketing strategies, employee payslip structures, and balance sheet figures align with its mission and values?
+Exploring Instagram's progress report, business proposal, and diversity initiatives, what are the key drivers of the company's competitive advantage?
+By examining Instagram's marketing plan, employee contracts, and income statement details, how does the company ensure ethical marketing practices and financial transparency?
+What insights can be gained from analyzing Instagram's shareholder agreements, progress report metrics, and employee ESOPs regarding the company's commitment to sustainability and social responsibility?
+Considering Instagram's tax return data, board of directors' decisions, and employee payslip information, how does the company foster a culture of innovation and continuous improvement?
+Based on Instagram's marketing strategies, balance sheet trends, and diversity metrics, what recommendations can be made to enhance the company's overall performance and stakeholder value?
+
+
+
+
+Ideas:
+
+When I went through these questions The immediate thought I had was what kind of questions the companies would be interested in asking or interested in the system generating responses to. If someone really wants to just know about the progress report he won't use a rag system he will directly open the file and read it. Why will an enterprise bear the cost of hosting such a RAG system over the cloud by paying money for this?
+So I need to find out questions which can make companies be interested in using this and willing to pay money for this. 
+So few questions I thought are:
+Is the company profitable or at a loss?
+What are the last three months' sales of the company?
+What is the annual projection of revenue of the company for the current FY?
+What is the net revenue of the company for the previous two years?
+Who are the shareholders of the company and what is the share distribution?
+How many employees work in the company?
+How many teams are there?
+What is the marketing spend of the company?
+What is the company's dividend policy for shareholders?
+What is the employee turnover rate in the company?
+
+The above questions are something which a company will I think be interested in knowing answers about. So for answering such questions first thing is that we will need all these financial calculations (either llm be able to do that using numbers or do an initial step where we from the document present automate this process of creation of a document which has all these financial information)
+Also a good feature could be a pitch desk creation which can be seen by an investor to decide whether to invest in a company or not. This can be really powerful use-case.

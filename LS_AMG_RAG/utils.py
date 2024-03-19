@@ -62,7 +62,8 @@ def keyword_yake(text):
 
 # Function to extract metadata from the text using custom NER model
 def extract_metadata(text):
-    nlp1 = spacy.load(R"LS_AMG_RAG/metadata_extraction/custom_ner/output/model-best")
+    nlp1 = spacy.load(r"LS_AMG_RAG/metadata_extraction/custom_ner/output/model-best")
+    # nlp1 = spacy.load("../metadata_extraction/custom_ner/output/model-best")
     doc = nlp1(text)
     label_dict = {
         "Person": set(),  # Use a set to store unique values
