@@ -6,8 +6,8 @@ def keyword_search(client, query, collection, limit=10):
             '$search': {
                 'index': collection,
                 'text': {
-                    'query': ' '.join(utils.keyword_yake(query)), # to search for the keywords
-                    # 'query': query, # to search for the whole query
+                    # 'query': ' '.join(utils.keyword_yake(query)), # to search for the keywords
+                    'query': query, # to search for the whole query
                     'path': {
                         'wildcard': '*'
                     }
@@ -63,7 +63,7 @@ def metadata_search(client, query, collection, category, limit=10):
 
     return result  # not a dict
 
-def vector_search(client, query, titles, collection, limit=3):
+def vector_search(client, query, titles, collection, limit=10):
     result = client['RAG'][collection].aggregate([
         {
             '$vectorSearch': {
