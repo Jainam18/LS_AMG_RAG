@@ -4,3 +4,4 @@ __pycache__/
 .venv/
 *.bin
 *.sqlite3
+rootkey.csv

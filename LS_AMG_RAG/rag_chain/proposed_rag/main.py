@@ -4,62 +4,21 @@ import json
 import time
 
 from LS_AMG_RAG import utils, prompt_utils
-from LS_AMG_RAG.rag_chain import rag_utils
+from LS_AMG_RAG.rag_chain.proposed_rag.rag import RAG
 
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-top_k = {
-    1: [],
-    3: [],
-    5: [],
-    10: [],
-}
-
-step_times = {
-    'Step 1': [],
-    'Step 2': [],
-    'Step 3': [],
-    'Step 4': [],
-    'Total': [],
-}
-
-queries = [
-    {'query': "What is Instagram's current business proposal?",
-     'file': "Business Proposal.md"},
-    {'query': "What is the marketing plan for Instagram?",
-     'file': "Marketing Plan.md"},
-    {'query': "What information does the progress report of Instagram contain?",
-     'file': "Progress Report.md"},
-    {'query': "Who are the members of Instagram's board of directors?",
-     'file': "Board of Directors.md"},
-    {'query': "What are the diversity and inclusion initiatives implemented by Instagram?",
-     'file': 'Diversity, Equity, and Inclusion.md'},
-    {'query': "What is the Marketing Objective for Influencer Collaboration Services?",
-     'file': 'Marketing Plan.md'},
-    {'query': "Who is the target audience of Content Creation and Curation Services?",
-     'file': 'Marketing Plan.md'},
-    {'query': "What is the financial update for the Reels Optimization Project?",
-     'file': 'Progress Report.md'},
-    {'query': "Give me details about the progress report of the Stories Upgrade project.",
-     'file': 'Progress Report.md'},
-    {'query': "Compare the progress report of the Feed Redesign and Stories Upgrade project and draw a conclusion on the information.",
-     'file': 'Progress Report.md'}
-]
-
-def get_keywords_and_metadata(query):
-    keywords = utils.keyword_yake(query)
-    metadata = utils.extract_metadata(query)
-    return keywords, metadata
-
-def get_relevant_documents(query, client, collection):
-    result = list(rag_utils.keyword_search(client=client, query=query, collection=collection))
+def get_relevant_documents(client, collection, query=None, keywords=None):
+    result = list(rag_utils.keyword_search(client=client, query=query, keywords=keywords, collection=collection))
     doc_ids = [doc['Doc_ID'] for doc in result]
     titles = [client['RAG']['Docs'].find_one({'_id': doc_ids[idx]})['Doc_Title'] for idx in range(len(doc_ids))]
     scores = [doc['score'] for doc in result]
     return titles, scores
 
 if __name__ == "__main__":
+
+    rag_utils = RAG()
 
     uri = "mongodb+srv://team-all:HHcJOjFa0lD5zHma@lms-amg-rag.kqmslmy.mongodb.net/?retryWrites=true&w=majority"
     client = MongoClient(uri, server_api=ServerApi("1"))
@@ -74,24 +33,25 @@ if __name__ == "__main__":
     except Exception as e:
         print(e)
 
-    for idx, query in enumerate(queries):
+    for idx, query in enumerate(rag_utils.queries):
         print(f"Query {idx + 1}: {query['query']}")
         print(f"Number of documents in the collection: {docs.count_documents({})}")
         # Step 1: Get keywords and metadata from the query
         start_time = time.time()
         step1_start_time = time.time()
-        # keywords, metadata_query = get_keywords_and_metadata(query['query'])
+        keywords, metadata_query = rag_utils.get_keywords_and_metadata(query['query'])
         print("Step 1: Keyword Extraction")
-        # print(f"Query: {query['query']}")
-        # print(f"Keywords from query: {', '.join(keywords)}")
-        # print(f"Metadata from query: {json.dumps(metadata_query, indent=2)}")
+        print(f"Query: {query['query']}")
+        print(f"Keywords from query: {', '.join(keywords)}")
+        print(f"Metadata from query: {json.dumps(metadata_query, indent=2)}")
         step1_end_time = time.time()
         print(f"Time taken for Keyword extraction: {step1_end_time - step1_start_time} seconds")
         print("\n\n ---------------- \n\n")
 
         # Step 2: Get the most relevant documents using keyword search
         step2_start_time = time.time()
-        titles, scores = get_relevant_documents(query['query'], client, 'Metadata')
+        # Decide whether to use keywords or query for keyword search
+        titles, scores = get_relevant_documents(client=client, collection='Metadata', keywords=keywords)
         print("Step 2: Filtering using Keyword Search")
         print("Titles \t Scores")
         print("\n".join("{} \t {}".format(x, y) for x, y in zip(titles, scores)))
@@ -112,8 +72,8 @@ if __name__ == "__main__":
         print("Document with top score is passed to the Gemini model.")
         print("\n\n ---------------- \n\n")
 
-        for k in top_k.keys():
-            top_k[k].append(any(query['file'] in x['Doc_Title'] for x in vector_result[:k]))
+        for k in rag_utils.top_k.keys():
+            rag_utils.top_k[k].append(any(query['file'] in x['Doc_Title'] for x in vector_result[:k]))
 
         # Step 4: Pass the most relevant document to the Gemini model
         step4_start_time = time.time()
@@ -131,20 +91,23 @@ if __name__ == "__main__":
         end_time = time.time()
         print(f"Total time taken: {end_time - start_time} seconds")
         print("\n\n ---------------- \n\n")
-        step_times['Step 1'].append(step1_end_time - step1_start_time)
-        step_times['Step 2'].append(step2_end_time - step2_start_time)
-        step_times['Step 3'].append(step3_end_time - step3_start_time)
-        step_times['Step 4'].append(step4_end_time - step4_start_time)
-        step_times['Total'].append(end_time - start_time)
+        rag_utils.step_times['extract_keywords'].append(step1_end_time - step1_start_time)
+        rag_utils.step_times['keyword_search'].append(step2_end_time - step2_start_time)
+        rag_utils.step_times['vector_search'].append(step3_end_time - step3_start_time)
+        rag_utils.step_times['llm_gen'].append(step4_end_time - step4_start_time)
+        rag_utils.step_times['total'].append(end_time - start_time)
         
-    print("Top K Results")
-    for k in top_k.keys():
-        print(f"Top {k}: {(sum(top_k[k]) * 100) / len(queries):.2f}%")
+    print("Results")
+    print("Top@K Results")
+    for k in rag_utils.top_k.keys():
+        print(f"Top@{k}: {(sum(rag_utils.top_k[k]) * 100) / len(rag_utils.queries):.2f}%")
+    
     print("\n\n ---------------- \n\n")
 
     print("Average Step Times")
-    print(f"Keyword Extraction: {sum(step_times['Step 1'])/len(queries):.2f} seconds")
-    print(f"Keyword Search: {sum(step_times['Step 2'])/len(queries):.2f} seconds")
-    print(f"Vector Search (Retrieval): {sum(step_times['Step 3'])/len(queries):.2f} seconds")
-    print(f"Generation: {sum(step_times['Step 4'])/len(queries):.2f} seconds")
-    print(f"Total: {sum(step_times['Total'])/len(queries):.2f} seconds")
+    print(f"Keyword Extraction: {sum(rag_utils.step_times['extract_keywords'])/len(rag_utils.queries):.2f} seconds")
+    print(f"Keyword Search: {sum(rag_utils.step_times['keyword_search'])/len(rag_utils.queries):.2f} seconds")
+    print(f"Vector Search: {sum(rag_utils.step_times['vector_search'])/len(rag_utils.queries):.2f} seconds")
+    print(f"Retrieval (Keyword + Vector Search): {sum(rag_utils.step_times['keyword_search'])/len(rag_utils.queries) + sum(rag_utils.step_times['vector_search'])/len(rag_utils.queries):.2f} seconds")
+    print(f"Generation: {sum(rag_utils.step_times['llm_gen'])/len(rag_utils.queries):.2f} seconds")
+    print(f"Total: {sum(rag_utils.step_times['total'])/len(rag_utils.queries):.2f} seconds")
