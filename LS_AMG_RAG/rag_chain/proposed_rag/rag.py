@@ -136,9 +136,9 @@ ANSWER:
 """
 
 
-    def get_keywords_and_metadata(self, query):
+    def get_keywords_and_metadata(self,query,nlp):
         keywords = utils.keyword_yake(query)
-        metadata = utils.extract_metadata(query)
+        metadata = utils.extract_metadata(query,nlp)
         return keywords, metadata
 
     def keyword_search(self, client, collection, query=None, keywords=None, limit=10):

@@ -2,7 +2,7 @@ from IPython.display import display, Markdown
 import importlib
 import json
 import time
-
+import spacy
 from LS_AMG_RAG import utils, prompt_utils
 from LS_AMG_RAG.rag_chain.proposed_rag.rag import RAG
 
@@ -10,6 +10,7 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
 def get_relevant_documents(client, collection, query=None, keywords=None):
+    rag_utils = RAG()
     result = list(rag_utils.keyword_search(client=client, query=query, keywords=keywords, collection=collection))
     doc_ids = [doc['Doc_ID'] for doc in result]
     titles = [client['RAG']['Docs'].find_one({'_id': doc_ids[idx]})['Doc_Title'] for idx in range(len(doc_ids))]
@@ -39,7 +40,8 @@ if __name__ == "__main__":
         # Step 1: Get keywords and metadata from the query
         start_time = time.time()
         step1_start_time = time.time()
-        keywords, metadata_query = rag_utils.get_keywords_and_metadata(query['query'])
+        nlp = spacy.load(r"LS_AMG_RAG/metadata_extraction/custom_ner/output/model-best")
+        keywords, metadata_query = rag_utils.get_keywords_and_metadata(query['query'],nlp)
         print("Step 1: Keyword Extraction")
         print(f"Query: {query['query']}")
         print(f"Keywords from query: {', '.join(keywords)}")

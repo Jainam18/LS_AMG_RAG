@@ -1,0 +1,110 @@
+Query,Answer,Time Taken
+What is Instagram's current business proposal?,"{
+  ""Instagram's current business proposal"": {
+    ""Focus"": ""Offering influencer collaboration services to connect brands with relevant influencers for impactful partnerships"",
+    ""Services included"": [""Influencer discovery"", ""Outreach"", ""Negotiation"", ""Campaign management"", ""Performance analysis""],
+    ""Pricing model"": ""Transparent and based on factors like influencer reach, engagement rates, content requirements, and campaign duration"",
+    ""Terms and conditions"": {
+      ""Outline"": [""Influencer selection criteria"", ""Content approvals"", ""Compensation details"", ""Exclusivity clauses""],
+      ""Purpose"": ""For mutual benefit and clarity""
+    }
+  }
+}",11.373541355133057
+What information does the progress report of Instagram contain?,"{
+  ""Information Included"": [
+    ""Updates on feature development projects like Feed Redesign, Stories Upgrade, Explore Algorithm Enhancement, Direct Messaging Update, IGTV Expansion, and Reels Optimization"",
+    ""Current status of projects"",
+    ""Achievements and challenges"",
+    ""Action plans"",
+    ""Resource allocation details"",
+    ""Financial updates""
+  ]
+}",6.28040337562561
+What are the diversity and inclusion initiatives implemented by Instagram?,"{
+    ""Diversity Initiatives"": [
+        ""Strategies for diverse hiring to ensure unbiased hiring processes and recruit talent from underrepresented communities"",
+        ""Support for Employee Resource Groups (ERGs) to foster a culture of inclusion"",
+        ""Ongoing training and education on unconscious bias, privilege, and systemic racism for employees"",
+        ""Commitment to featuring diverse content creators, artists, and voices on the platform""
+    ],
+    ""Inclusion Initiatives"": [
+        ""Supporting Employee Resource Groups (ERGs) to provide a platform for employees to connect, share experiences, and create a sense of belonging"",
+        ""Providing ongoing training and education to promote awareness and understanding of unconscious bias, privilege, and systemic racism""
+    ]
+}",14.484236240386963
+How do the terms of the employment contract boost employee retention?,"{
+    ""The terms of the employment contract can boost employee retention by clearly defining expectations, providing competitive compensation and benefits, ensuring job security through termination conditions, requiring confidentiality agreements, and emphasizing compliance with company policies. These factors contribute to creating a positive work environment that fosters employee satisfaction and loyalty.""
+}",7.404700756072998
+What is the Marketing Objective for Influencer Collaboration Services?,"{
+  ""Marketing Objective"": ""The marketing objective for influencer collaboration services is to establish authentic brand partnerships with influencers to amplify brand reach and credibility, as well as to drive user engagement and brand affinity through influencer-generated content.""
+}",4.995116233825684
+What is the financial update for the Reels Optimization Project?,"{
+  ""financial_update"": ""$7,000""
+}",3.7278335094451904
+Compare the progress report of the Feed Redesign and Stories Upgrade project and draw a conclusion on the information.,"{
+  ""Feed Redesign Project"": {
+    ""Status"": ""In progress"",
+    ""Achievements"": [""Redesigned layout"", ""UI improvements""],
+    ""Challenges"": [""Technical issues""],
+    ""Action Plans"": [""Bug fixes"", ""Testing""],
+    ""Resource Allocation"": {
+      ""Developers"": 5
+    },
+    ""Financial Update"": {
+      ""Budget"": ""$10,000""
+    }
+  },
+  ""Stories Upgrade Project"": {
+    ""Status"": ""Completed""
+  },
+  ""Conclusion"": ""The Feed Redesign project is still ongoing with achievements in layout and UI improvements but facing technical challenges. Action plans are in place to address these issues. In contrast, the Stories Upgrade project has been successfully completed.""
+}",8.882984638214111
+Who are the key personnel of Instagram?,"{
+    ""Key Personnel"": {
+        ""Chairman of the Board"": ""John Smith"",
+        ""CEO"": ""Sarah Johnson"",
+        ""Chief Financial Officer"": ""David Lee"",
+        ""Chief Marketing Officer"": ""Emily Davis""
+    }
+}",5.222167015075684
+How does Instagram promote community involvement?,"{
+    ""Instagram promotes community involvement by fostering a diverse, equitable, and inclusive workplace, creating an environment where everyone feels valued, respected, and has equal opportunities for personal and professional growth. These strategies are ingrained in Instagram's culture and drive their actions and decisions, aiming to provide a platform where users can connect, create, and be inspired while upholding values of creativity, diversity, and inclusion.""
+}",8.078804969787598
+What is the background of the CEO (Chief Executive Officer) of Instagram?,"{
+    ""background"": ""The CEO of Instagram has a background in driving the company's overall growth and success, showcasing strong leadership skills and a deep understanding of social media platforms.""
+}",5.640260696411133
+Who is the chairman of Instagram and which year did the person become the chairman of the board?,"{
+    ""Chairman of Instagram"": ""John Smith"",
+    ""Year became Chairman of the Board"": 2015
+}",4.640073299407959
+How has the Board of Directors contributed to Instagram's success?,"{
+    ""contribution"": ""The Board of Directors has contributed to Instagram's success by guiding the company through its acquisition by Facebook, ensuring the preservation of its unique identity and features. They have provided strategic guidance in the development and introduction of new features such as Stories, IGTV, and Reels, which have revolutionized content sharing and engagement on the platform. Additionally, the Board has supported the launch of initiatives to foster a safe and inclusive community, including proactive content moderation practices and the promotion of positive online behavior. Furthermore, they have overseen the expansion of Instagram's user base to over 1 billion monthly active users worldwide, solidifying its position as one of the most popular social media platforms globally.""
+}",8.912991523742676
+Total number of work hours of Leo Kim?,"{
+    ""Total number of work hours of Leo Kim"": ""40 hours per week""
+}",4.744060516357422
+What are the employee benefits provided to Ethan Rodriguez?,"{
+    ""Employee"": ""Ethan Rodriguez"",
+    ""Benefits"": [""Health insurance"", ""Retirement plans"", ""Paid time off""]
+}",5.243171453475952
+Name the employee working in the Security Department and what is his/her compensation?,"{
+    ""Employee"": ""Ethan Rodriguez"",
+    ""Compensation"": ""Not provided""
+}",4.2109410762786865
+What is the responsibility of the content moderator?,"{
+    ""Responsibility"": ""Producing engaging and creative content for the company""
+}",4.038902521133423
+"Which employee is getting paid $125,000 per year as compensation and which department does he work in?","{
+    ""employee"": ""Olivia Taylor"",
+    ""compensation"": ""$125,000 per year"",
+    ""department"": ""Legal""
+}",5.353195667266846
+"Which employee did enter into the ESOP with Instagram on April 1, 2022?","{
+    ""employee"": ""Emily Brown""
+}",3.14170241355896
+How many number of shares were allocated to Liam Kim?,"{
+    ""number_of_shares_allocated_to_Liam_Kim"": 105
+}",3.8298559188842773
+How much bonus does the Public Relations Manager receive?,"{
+    ""bonus_amount"": ""$850.00""
+}",3.7178306579589844
