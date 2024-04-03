@@ -20,9 +20,9 @@ def load_huggingface_dataset_to_dataframe(dataset_name: str, subset_name: str) -
         return None
 
 
-dataset_name = "yixuantt/MultiHopRAG"
-subset_name = "corpus"
-df_multi_hop_rag = load_huggingface_dataset_to_dataframe(dataset_name, subset_name)
-print(df_multi_hop_rag)
+# dataset_name = "yixuantt/MultiHopRAG"
+# subset_name = "corpus"
+# df_multi_hop_rag = load_huggingface_dataset_to_dataframe(dataset_name, subset_name)
+# print(df_multi_hop_rag)
 
 
