@@ -23,6 +23,7 @@ pke = {git = "https://github.com/boudinfl/pke.git"}
 markdown = "^3.5.2"
 spacy = "^3.7.4"
 en_core_web_sm = {url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz"}
+datasets = "^2.18.0"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.3"
