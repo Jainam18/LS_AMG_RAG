@@ -26,4 +26,4 @@ def load_huggingface_dataset_to_dataframe(dataset_name: str, subset_name: str) -
 # print(df_multi_hop_rag)
 
 # save the dataframe to a csv file
-df_multi_hop_rag.to_csv("multi_hop_rag_dataset.csv", index=False)
+# df_multi_hop_rag.to_csv("multi_hop_rag_dataset.csv", index=False)
