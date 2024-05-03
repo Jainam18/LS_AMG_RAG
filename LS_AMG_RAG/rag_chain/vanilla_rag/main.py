@@ -8,11 +8,11 @@ from LS_AMG_RAG.rag_chain.vanilla_rag.rag import RAG
 
 
 if __name__ == "__main__":
-    rag_utils = RAG()
+    rag_utils = RAG(queries_path="LS_AMG_RAG/rag_chain/vanilla_rag/queries")
 
     # chroma_client = chromadb.PersistentClient(path="./") # to use the local database
     # chroma_client = chromadb.HttpClient(host='localhost', port=8000) # for local server
-    chroma_client = chromadb.HttpClient(host="52.70.139.105", port=8000) # for AWS server
+    chroma_client = chromadb.HttpClient(host="54.160.154.81", port=8000) # for AWS server
 
     gemini = prompt_utils.Gemini()
     google_ef  = embedding_functions.GoogleGenerativeAiEmbeddingFunction(api_key=os.environ['GEMINI_API_KEY'])
@@ -59,7 +59,7 @@ if __name__ == "__main__":
         retrieval_start_time = time.time()
         results = collection.query(
             query_texts=query['query'],
-            n_results=10,
+            n_results=20,
         )
 
         for k in rag_utils.top_k.keys():
