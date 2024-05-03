@@ -120,7 +120,6 @@ class RAG:
 Be sure to respond in a complete sentence, being comprehensive, including all relevant background information. \
 However, you are talking to a non-technical audience, so be sure to break down complicated concepts and \
 strike a friendly and converstional tone. \
-Use your own knowledge base in addition to the information provided in the document to answer the question. \
 Make relevant assumptions and use your best judgement to answer the question. \
 
 DOCUMENT TITLE: {relevant_document_title}
@@ -154,7 +153,7 @@ ANSWER:
         else:
             raise ValueError("Either keywords or query must be provided.")
 
-        result = client['RAG'][collection].aggregate(self.keyword_search_aggregation)
+        result = client['RAG-2'][collection].aggregate(self.keyword_search_aggregation)
         
         return result  # not a dict
 
@@ -165,6 +164,6 @@ ANSWER:
         self.vector_search_aggregation[0]['$vectorSearch']['numCandidates'] = len(titles)
         self.vector_search_aggregation[0]['$vectorSearch']['limit'] = len(titles) if len(titles) < limit else limit
 
-        result = client['RAG'][collection].aggregate(self.vector_search_aggregation)
+        result = client['RAG-2'][collection].aggregate(self.vector_search_aggregation)
 
         return result  # not a dict

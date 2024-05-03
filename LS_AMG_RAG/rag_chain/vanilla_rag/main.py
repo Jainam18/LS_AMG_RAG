@@ -5,6 +5,7 @@ import chromadb
 import chromadb.utils.embedding_functions as embedding_functions
 from LS_AMG_RAG.data_snythesis import prompt_utils
 from LS_AMG_RAG.rag_chain.vanilla_rag.rag import RAG
+import pandas as pd
 
 
 if __name__ == "__main__":
@@ -12,7 +13,7 @@ if __name__ == "__main__":
 
     # chroma_client = chromadb.PersistentClient(path="./") # to use the local database
     # chroma_client = chromadb.HttpClient(host='localhost', port=8000) # for local server
-    chroma_client = chromadb.HttpClient(host="54.160.154.81", port=8000) # for AWS server
+    chroma_client = chromadb.HttpClient(host="18.209.5.239", port=8000) # for AWS server
 
     gemini = prompt_utils.Gemini()
     google_ef  = embedding_functions.GoogleGenerativeAiEmbeddingFunction(api_key=os.environ['GEMINI_API_KEY'])
@@ -53,6 +54,7 @@ if __name__ == "__main__":
     finally:
         print(f"Total number of documents in the collection: {len(collection.get()['ids'])}")
 
+    df = pd.DataFrame(columns=['query', 'true_document', 'vanilla_retrieved_document', 'vanilla_result', 'vanilla_retrieval_time', 'vanilla_generation_time', 'vanilla_total_time', 'vanilla_top_1', 'vanilla_top_3', 'vanilla_top_5', 'vanilla_top_10'])
     for idx, query in tqdm(enumerate(rag_utils.queries)):
         print(f"\nQuery {idx+1}: {query['query']}")
         total_start_time = time.time()
@@ -75,6 +77,8 @@ if __name__ == "__main__":
         gen_end_time = time.time()
         total_end_time = time.time()
 
+        df.loc[idx] = [query['query'], query['file'], results['ids'][0][0], gemini_result, retrieval_end_time - retrieval_start_time, gen_end_time - gen_start_time, total_end_time - total_start_time, rag_utils.top_k[1][-1], rag_utils.top_k[3][-1], rag_utils.top_k[5][-1], rag_utils.top_k[10][-1]]
+
         rag_utils.step_times['vector_search'].append(retrieval_end_time - retrieval_start_time)
         rag_utils.step_times['llm_gen'].append(gen_end_time - gen_start_time)
         rag_utils.step_times['total'].append(total_end_time - total_start_time)
@@ -83,6 +87,7 @@ if __name__ == "__main__":
         print(f"Total time: {total_end_time - total_start_time:.2f} seconds")
         print("\n-------------------\n")
 
+    df.to_csv("LS_AMG_RAG/rag_chain/vanilla_rag/vanilla_results.csv", index=False)
     print("Results")
     print("Top@K Results")
     for k in rag_utils.top_k.keys():

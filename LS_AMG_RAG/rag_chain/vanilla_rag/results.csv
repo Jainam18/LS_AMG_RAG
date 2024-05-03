@@ -1,0 +1,11 @@
+query,true_document,vanilla_retrieved_document,vanilla_retrieval_time,vanilla_generation_time,vanilla_total_time
+What is Instagram's current business proposal?,Business Proposal.md,LS_AMG_RAG/data/business_docs_Business Proposal.md,0.8663251399993896,3.2380459308624268,4.105372190475464
+What is the marketing plan for Instagram?,Marketing Plan.md,LS_AMG_RAG/data/business_docs_Marketing Plan.md,1.3314833641052246,3.9019408226013184,5.233424186706543
+What information does the progress report of Instagram contain?,Progress Report.md,LS_AMG_RAG/data/business_docs_Progress Report.md,0.9331309795379639,1.9153273105621338,2.8514022827148438
+Who are the members of Instagram's board of directors?,Board of Directors.md,LS_AMG_RAG/data/company_bylaws_Board of Directors.md,1.5921244621276855,2.5376124382019043,4.130742073059082
+What are the diversity and inclusion initiatives implemented by Instagram?,"Diversity, Equity, and Inclusion.md","LS_AMG_RAG/data/company_bylaws_Diversity, Equity, and Inclusion.md",1.056239366531372,3.305840253829956,4.363077878952026
+What is the Marketing Objective for Influencer Collaboration Services?,Marketing Plan.md,LS_AMG_RAG/data/business_docs_MarketingPlan_2.md,1.0587854385375977,4.797163724899292,5.85594916343689
+Who is the target audience of Content Creation and Curation Services?,Marketing Plan.md,LS_AMG_RAG/data/business_docs_MarketingPlan_3.md,1.0755915641784668,5.929133653640747,7.006677627563477
+What is the financial update for the Reels Optimization Project?,Progress Report.md,LS_AMG_RAG/data/business_docs_ProjectReport_4.md,0.9112048149108887,3.184709072113037,4.098487377166748
+Give me details about the progress report of the Stories Upgrade project.,Progress Report.md,LS_AMG_RAG/data/business_docs_ProjectReport_6.md,1.066131591796875,3.0606963634490967,4.127831220626831
+Compare the progress report of the Feed Redesign and Stories Upgrade project and draw a conclusion on the information.,Progress Report.md,LS_AMG_RAG/data/business_docs_ProjectReport_5.md,1.4259183406829834,4.747051239013672,6.175937175750732

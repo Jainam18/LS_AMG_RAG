@@ -61,7 +61,7 @@ def keyword_yake(text):
     return keyphrases
 
 # Function to extract metadata from the text using custom NER model
-def extract_metadata(text,nlp):
+def extract_metadata(text,nlp=spacy.load(r"LS_AMG_RAG/metadata_extraction/custom_ner/output/model-best")):
     # nlp1 = spacy.load(r"LS_AMG_RAG/metadata_extraction/custom_ner/output/model-best")
     # nlp1 = spacy.load("../metadata_extraction/custom_ner/output/model-best")
     doc = nlp(text)
@@ -148,7 +148,7 @@ def store_data_in_mongodb(texts, vectors, client):
 def insert_data_into_mongodb_collection(
     client, doc_title, category, vector, text, flag, keywords, people, org, places, money, email, contact_number, dates_mentioned
 ):
-    db = client["RAG"]
+    db = client["RAG-2"]
     docs_collection = db["Docs"]
     metadata_collection = db["Metadata"]
 

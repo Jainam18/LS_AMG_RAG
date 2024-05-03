@@ -1,0 +1,98 @@
+query,true_document,proposed_retrieved_document,proposed_response,proposed_extract_keywords_time,proposed_keyword_search_time,proposed_vector_search_time,proposed_retrieval_time,proposed_generation_time,proposed_total_time,proposed_top_1,proposed_top_3,proposed_top_5,proposed_top_10
+What is Instagram's current business proposal?,Business Proposal.md,Business Proposal.md,"Currently, Instagram has three business proposals available:
+
+**1. Social Media Marketing Services:** This proposal offers comprehensive social media marketing services, including strategic content creation, optimized ad campaigns, targeted audience analysis, and performance tracking.
+
+**2. Influencer Collaboration Services:** This proposal provides brands with the opportunity to collaborate with influencers and leverage their reach and credibility to drive brand awareness and engagement.
+
+**3. Content Creation and Curation Services:** This proposal offers specialized content creation and curation services to elevate your brand's visual presence and storytelling on the platform.",0.8230607509613037,0.1897263526916504,1.638521432876587,1.8292498588562012,3.0076656341552734,5.660973787307739,True,True,True,True
+What is the marketing plan for Instagram?,Marketing Plan.md,Marketing Plan.md,"Instagram's marketing plan includes three main components:
+
+**1. Social Media Marketing Services:** This plan targets small businesses, startups, and e-commerce ventures looking to enhance their online presence and engage with a younger demographic through social media platforms. Key strategies include personalized social media marketing strategies, influencer collaborations, interactive content, and data-driven insights.
+
+**2. Influencer Collaboration Services:** This plan focuses on establishing authentic brand partnerships with influencers to amplify brand reach and credibility, particularly for fashion brands, lifestyle products, and beauty companies. Strategies involve strategic influencer selection, co-creation of compelling content, and performance monitoring.
+
+**3. Content Creation and Curation Services:** This plan aims to elevate brand storytelling through visually captivating and engaging content formats. It targets media companies, creative agencies, and lifestyle brands looking to enhance their content quality and engagement. Strategies include tailored content planning, user-generated content campaigns, and interactive storytelling elements.",0.8279294967651367,0.18988418579101562,0.41466212272644043,0.6055459976196289,4.744293212890625,6.180274486541748,True,True,True,True
+What information does the progress report of Instagram contain?,Progress Report.md,Progress Report.md,"Instagram's progress report provides a snapshot of the current status, achievements, challenges, action plans, resource allocation, and financial updates for various ongoing projects and initiatives. It includes the following information:
+
+* **Project Name:** The name of the project or initiative being reported on.
+* **Status:** The current status of the project, such as ""In Progress,"" ""Completed,"" ""On Hold,"" or ""Planned.""
+* **Achievements:** Notable accomplishments and milestones achieved during the reporting period.
+* **Challenges:** Any obstacles or difficulties encountered during the project implementation.
+* **Action Plans:** Proposed solutions and steps to address challenges and ensure project success.
+* **Resource Allocation:** The human resources (e.g., developers, designers, analysts) and financial resources (e.g., budget) allocated to each project.
+* **Financial Updates:** Financial information related to project expenses and budget utilization.
+
+This progress report provides stakeholders with a clear overview of the progress made on various projects, as well as any challenges that need to be addressed. It helps ensure transparency and accountability, and allows for timely adjustments to project plans and resource allocation.",0.9224820137023926,0.12449002265930176,0.41980957984924316,0.5448229312896729,5.423851251602173,6.893155336380005,True,True,True,True
+Who are the members of Instagram's board of directors?,Board of Directors.md,Board of Directors.md,"Instagram's board of directors consists of the following members:
+
+* **John Smith**, Chairman of the Board
+* **Sarah Johnson**, CEO, Instagram
+* **David Lee**, Chief Financial Officer
+* **Emily Davis**, Chief Marketing Officer
+
+These experienced professionals provide strategic guidance and oversight to ensure Instagram's continued success and growth. They bring diverse expertise and perspectives, contributing to the company's overall vision and direction.",0.8276727199554443,0.14289283752441406,0.41721320152282715,0.5601060390472412,3.7716104984283447,5.160853385925293,True,True,True,True
+What are the diversity and inclusion initiatives implemented by Instagram?,"Diversity, Equity, and Inclusion.md","Diversity, Equity, and Inclusion.md","Instagram has implemented several initiatives to promote diversity and inclusion within its organization and platform:
+
+* **Diverse Hiring:** Instagram employs strategies to ensure diverse candidate pools and unbiased hiring practices. They actively recruit talent from underrepresented communities and provide equal opportunities for all applicants.
+
+* **Employee Resource Groups (ERGs):** Instagram supports ERGs that provide a platform for employees to connect, share experiences, and foster a sense of belonging. These ERGs contribute to the company's DEI efforts and promote a culture of inclusion.
+
+* **Training and Education:** Instagram provides ongoing training and education to its employees to raise awareness and understanding of unconscious bias, privilege, and systemic racism. The company believes that education is crucial for creating an inclusive and equitable workplace.
+
+* **Diverse Content:** Instagram is committed to featuring diverse content creators, artists, and voices on its platform. They actively highlight diverse perspectives to ensure that users have a rich and inclusive experience on the platform.
+
+These initiatives demonstrate Instagram's commitment to fostering a diverse, equitable, and inclusive environment where everyone feels valued, respected, and has equal opportunities for growth.",0.8958351612091064,0.12087702751159668,0.45035505294799805,0.5722403526306152,6.4556193351745605,7.92669677734375,True,True,True,True
+What is the Marketing Objective for Influencer Collaboration Services?,Marketing Plan.md,MarketingPlan_2.md,"The marketing objective for Instagram's Influencer Collaboration Services is twofold:
+
+1. **Brand Partnerships:** To establish genuine and mutually beneficial brand partnerships with influencers to enhance brand reach, credibility, and engagement.
+
+2. **Engagement and Advocacy:** To foster user engagement and brand affinity through influencer-generated content that resonates with target audiences and encourages user interaction and participation, ultimately increasing brand advocacy and word-of-mouth referrals.",1.235766887664795,0.13860487937927246,0.4137458801269531,0.5533509254455566,4.506881475448608,6.29800009727478,False,True,True,True
+Who is the target audience of Content Creation and Curation Services?,Marketing Plan.md,MarketingPlan_3.md,"The target audience of Instagram's Content Creation and Curation Services includes:
+
+* **Media companies:** Seeking to enhance their content quality and engagement by leveraging visually captivating and immersive storytelling.
+
+* **Creative agencies:** Aiming to elevate their clients' brand narratives and establish a consistent visual identity through curated content.
+
+* **Lifestyle brands:** Looking to connect with their target audience through visually appealing content that resonates with their brand values and aspirations.
+
+* **Businesses across various industries**: Recognizing the importance of establishing a strong brand presence and engaging their audience through high-quality content.",1.1819109916687012,0.13781499862670898,0.4300565719604492,0.5678715705871582,5.97472071647644,7.725513219833374,False,True,True,True
+What is the financial update for the Reels Optimization Project?,Progress Report.md,ProjectReport_4.md,The provided document does not contain any information about the financial updates for the Reels Optimization Project.,1.0218462944030762,0.1599578857421875,0.42566585540771484,0.5866241455078125,3.2854926586151123,4.896959543228149,False,False,False,False
+Give me details about the progress report of the Stories Upgrade project.,Progress Report.md,ProjectReport_6.md,"The Stories Upgrade project on Instagram has been completed and has achieved its objectives of enhancing Instagram Stories with new interactive elements and gathering user feedback for continuous improvement. Here's a summary of the progress report:
+
+**Achievements:**
+
+* Successfully added new interactive elements to Instagram Stories, making them more engaging and interactive for users.
+* Gathered valuable user feedback through surveys, polls, and user testing sessions to identify areas for further improvements and enhancements.
+
+**Challenges:**
+
+* Faced challenges in seamlessly integrating the new features into the existing Stories platform, requiring additional development effort.
+* Some user feedback required additional iteration and refinement to ensure a smooth and intuitive user experience.
+
+**Action Plans:**
+
+* The team plans to implement new features based on user suggestions and feedback to further enhance the Stories experience.
+* They will continue to work closely with the design and development teams to ensure smooth implementation and user experience in future updates.",1.0681869983673096,0.14252328872680664,0.40586042404174805,0.549382209777832,5.7221999168396,7.3407697677612305,False,True,True,True
+Compare the progress report of the Feed Redesign and Stories Upgrade project and draw a conclusion on the information.,Progress Report.md,ProjectReport_5.md,"**Comparison of Feed Redesign and Stories Upgrade Project Progress Reports:**
+
+Both the Feed Redesign and Stories Upgrade projects on Instagram are works in progress, with the Feed Redesign project starting more recently on January 15, 2023, and the Stories Upgrade project having been completed on September 25, 2019.
+
+**Achievements:**
+
+* **Feed Redesign:** Successfully redesigned the layout and UI of the Instagram feed, implementing new interactive elements to enhance user engagement.
+* **Stories Upgrade:** Successfully added new interactive elements to Instagram Stories, making them more engaging and interactive for users.
+
+**Challenges:**
+
+* **Feed Redesign:** Faced technical issues during the implementation phase, encountering bugs and glitches during testing.
+* **Stories Upgrade:** Faced challenges in seamlessly integrating new features into the existing platform, requiring additional development effort.
+
+**Action Plans:**
+
+* **Feed Redesign:** Conduct thorough bug fixes and testing to address technical issues, collaborating with the development team to ensure smooth implementation of redesign features.
+* **Stories Upgrade:** Implemented new features based on user suggestions and feedback, working closely with the design and development teams to ensure smooth implementation and user experience in future updates.
+
+**Conclusion:**
+
+Both the Feed Redesign and Stories Upgrade projects have made progress towards their objectives of enhancing the user experience on Instagram. The Feed Redesign project is still in progress and addressing technical issues, while the Stories Upgrade project has been completed and is now focused on implementing new features based on user feedback. Overall, Instagram is committed to improving its platform and user experience through these ongoing projects.",0.9175562858581543,0.14039278030395508,0.5524539947509766,0.6928467750549316,8.898308038711548,10.511707305908203,False,False,False,False
